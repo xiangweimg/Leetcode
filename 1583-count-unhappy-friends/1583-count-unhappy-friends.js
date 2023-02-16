@@ -13,14 +13,13 @@ var unhappyFriends = function(n, preferences, pairs) {
         preferred[b] = preferences[b].slice(0, preferences[b].indexOf(a))
     }
     for(let i=0; i< preferred.length; i++){
-        if(preferred[i].length){
+        if(!preferred[i].length) continue;
             for(let person of preferred[i]){
                 if(preferred[person].includes(i)){
                     count++
                     break
                 }
             }
-        }
     }
     return count
 };
