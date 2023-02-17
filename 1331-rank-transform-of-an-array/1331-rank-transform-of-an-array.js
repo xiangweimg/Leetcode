@@ -21,6 +21,5 @@ var arrayRankTransform = function(arr) {
             res.push(ranking[curr])
         }
     } 
-    console.log(ranking)
     return res
 };
