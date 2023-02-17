@@ -12,7 +12,7 @@
  * @param {Node} head
  * @return {Node}
  */
-var flatten = function(head, nextList=null) {
+var flatten = function(head, next=null) {
     let dummyHead = head
     let curr = dummyHead
     while(curr !== null){
@@ -22,9 +22,9 @@ var flatten = function(head, nextList=null) {
             curr.child = null
             curr.next.prev = curr
             flatten(curr.next, oldNext)
-        }else if(curr.next === null && nextList){
-            curr.next = nextList
-            nextList.prev = curr
+        }else if(curr.next === null && next){
+            curr.next = next
+            next.prev = curr
             return
         }
         curr = curr.next
