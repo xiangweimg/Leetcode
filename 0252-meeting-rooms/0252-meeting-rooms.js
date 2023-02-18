@@ -17,6 +17,7 @@ var canAttendMeetings = function(intervals) {
             return a.time - b.time
         }
     }) 
+    
     for(let sort of sorted){
         let lastI = stack[stack.length - 1]
         if(sort.index === lastI ){
