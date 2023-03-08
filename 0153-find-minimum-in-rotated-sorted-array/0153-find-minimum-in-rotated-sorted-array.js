@@ -11,7 +11,7 @@ var findMin = function(nums) {
     let leftEnd = left[left.length -1]
     let rightEnd = right[right.length -1];
     if(left[0] < rightEnd) return left[0];
-    // console.log(nums,left,right)
+    
     if(leftEnd > right[0]){
         return right[0]
     }else if(right[0] < rightEnd){
