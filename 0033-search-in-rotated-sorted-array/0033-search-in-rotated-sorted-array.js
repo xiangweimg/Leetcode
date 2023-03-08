@@ -9,7 +9,7 @@ var search = function(nums, target) {
     let left = nums.slice(0, midpoint);
     let right = nums.slice(midpoint);
     let rightEnd = right[right.length - 1]
-    let leftEnd = left[left.length -1]
+    let leftEnd = left[left.length -1];
     
     if(nums[midpoint] === target) return midpoint;
 
