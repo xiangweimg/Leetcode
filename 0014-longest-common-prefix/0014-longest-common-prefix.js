@@ -7,7 +7,7 @@ var longestCommonPrefix = function(strs) {
     for(let i = 1; i < strs.length; i++){
 	    let index = 0;  
 		let word = ''
-        while(strs[i][index] === prefix[index] && strs[i][index] && prefix[index]){
+        while(strs[i][index] && prefix[index] && strs[i][index] === prefix[index]){
             // console.log(strs[i][index], prefix[index])
             word += strs[i][index]
             index++
