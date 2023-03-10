@@ -4,7 +4,6 @@
  * @param {number[][]} food
  */
 var SnakeGame = function(width, height, food) {
-    // this.grid = new Array(height).fill().map((ele) => new Array(width))    
     this.snake = [0,0]
     this.food= food
     this.body = ['0,0']
@@ -26,6 +25,8 @@ SnakeGame.prototype.move = function(direction) {
         'U':[-1,0],
         'D':[1,0],
     }
+    let row = this.snake[0]
+    let col = this.snake[1]
     this.snake = [this.snake[0]+ move[direction][0], this.snake[1]+move[direction][1]]
     if(this.snake[0] > this.height || this.snake[1] > this.width || this.snake[0] < 0 || this.snake[1] < 0) return -1;
 
@@ -37,8 +38,7 @@ SnakeGame.prototype.move = function(direction) {
     if(this.body.length > this.score){ //2, 1
         this.body.shift()
     }
-    //check if bite itself, this.body includes? this.snake?
-    // console.log(this.body, this.snake)
+
     if(this.body.includes(this.snake.join(','))) return -1;
     this.body.push(this.snake.join(','))//2
     return this.score
