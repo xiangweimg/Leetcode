@@ -25,12 +25,22 @@ var canFinish = function(numCourses, prerequisites) {//[class, pre]
     }
     let count = 0;
     while(stack.length){
-        let index= stack.pop()
-        count+=1
-        let current = classByIndex[index]// [1,2,3] depend on this index
+        // let index= stack.pop()
+        // count+=1
+        // let current = classByIndex[index]// [1,2,3] depend on this index
+        // for(let i = 0; i < current.length; i++){
+        //     const next = current[i]//class#
+        //     node[next]--//class next depends on 
+        //     if(node[next] === 0){
+        //         stack.push(next)
+        //     }
+        // }
+        let index = stack.pop()
+        count += 1
+        let current = classByIndex[index];
         for(let i = 0; i < current.length; i++){
-            const next = current[i]//class#
-            node[next]--//class next depends on 
+            const next = current[i];
+            node[next]--
             if(node[next] === 0){
                 stack.push(next)
             }
