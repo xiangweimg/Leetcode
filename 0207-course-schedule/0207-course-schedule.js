@@ -4,7 +4,6 @@
  * @return {boolean}
  */
 var canFinish = function(numCourses, prerequisites) {//[class, pre]
-
     //[[class depends on this index]]
     const classByIndex = new Array(numCourses).fill(0).map(() => [])
     //class at this index depends on other class(numbers)
@@ -14,7 +13,7 @@ var canFinish = function(numCourses, prerequisites) {//[class, pre]
         let pre= pair[1]
         let course = pair[0]
         classByIndex[pre].push(course)
-        node[course]++
+        node[course]++//how many pre it has
     }
 
     const stack = []; //push all the index with 0 from node 
