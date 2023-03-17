@@ -15,11 +15,9 @@ var longestPalindrome = function(str) {//babad
             right++;
             i++;
         }
-        while(left >=0 && right < str.length - 1 && str[left - 1] === str[right + 1]) {
-            // console.log(left,right,i)
+        while(left >=0 && right < str.length - 1 && str[left - 1] === str[right + 1]){
             left--;
             right++;
-            // console.log(left,right,i)
         }
         if(results.length < (right - left + 1)) {
             results = str.slice(left, right + 1);
